@@ -1,0 +1,379 @@
+/* Base Styles for Header */
+@font-face {
+    font-family: 'CustomFont';
+    src: url('custom-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'CustomFont', sans-serif;
+    background: linear-gradient(to bottom, #0b0c10, #1f2833); /* Dark theme */
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    height: 100%; /* Full height of the document */
+    min-height: 100vh; /* Minimum height is full viewport height */
+    position: relative; /* For positioning the canvas */
+    cursor: url('custom-cursor.cur'), auto;  /* Set custom .cur cursor */
+}
+
+/* Light theme styles */
+body.light {
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* White gradient for light theme */
+    color: #333;
+}
+
+/* Canvas for Snow Effect */
+#snowCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Disable interaction with canvas */
+    z-index: -1; /* Ensure it stays behind the content */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Ensures it sticks at the top of the page */
+    z-index: 1000; /* Keeps it above other content */
+}
+
+/* Logo Styling */
+header .logo {
+    font-size: 50px;
+    font-weight: 700;
+    color: #4caf50;
+    padding-left: 30px;
+}
+
+/* Navigation Styling */
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navigation Links Styling */
+header nav a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 30px;
+    transition: color 0.3s;
+    position: relative; /* Ensures proper positioning of dropdown */
+}
+
+header nav a:hover {
+    color: #fff;
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative; /* Keeps dropdown in place */
+    display: inline-block; /* Allows dropdown to take up space next to the navigation links */
+}
+
+/* Dropdown menu content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute; /* Position it directly below the button */
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1; /* Ensures it appears above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for a better look */
+}
+
+/* Show dropdown content when hovered */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Styling for items in the dropdown */
+.dropdown-content a {
+    color: #bbb;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block; /* Ensures each item is in a new line */
+}
+
+/* Styling for dropdown items when hovered */
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Twitter Icon Styling */
+.twitter-icon {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.twitter-icon img {
+    vertical-align: middle;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 30px;
+    height: 30px;
+}
+
+.twitter-icon:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    display: none; /* Hide hamburger menu by default */
+    font-size: 30px;
+    cursor: pointer;
+    color: #bbb;
+    padding: 10px;
+}
+
+/* Main Content Styling */
+main {
+    min-height: 100vh;  /* Ensures the main section takes up at least full screen */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+}
+
+.text {
+    max-width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.astronaut {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.astronaut img {
+    max-width: 100%;
+    height: auto;
+}
+
+main h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+main p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+main p span {
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+/* Prevent the appearance of black area when scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #111;
+    color: #bbb;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+footer a {
+    color: #f1c40f;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styles */
+button {
+    --button_radius: 0.75em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #4caf50;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+    padding: 0;
+    margin-top: 20px;
+}
+
+.button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+
+button:hover .button_top {
+    transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+    transform: translateY(0);
+}
+
+/* Popup Gambar */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Memastikan popup mengambil seluruh lebar layar */
+    height: 100vh; /* Memastikan popup mengambil seluruh tinggi layar */
+    background-color: rgba(0, 0, 0, 0.8); /* Background transparan dengan sedikit hitam */
+    padding: 0; /* Menghapus padding */
+    z-index: 1000;
+    text-align: center;
+    border-radius: 0; /* Menghapus border-radius untuk full-screen */
+}
+
+/* Gambar dalam popup yang menutupi layar */
+.popup-image {
+    width: 100%;   /* Gambar mengambil 100% lebar layar */
+    height: 100%;  /* Gambar mengambil 100% tinggi layar */
+    object-fit: cover;  /* Memastikan gambar memenuhi area tanpa distorsi */
+    border: none; /* Menghapus border */
+}
+
+/* Tombol close */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5); /* Background semi-transparan */
+    padding: 10px;
+    border-radius: 50%; /* Tombol close bulat */
+    transition: background 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(255, 0, 0, 0.8); /* Tombol close dengan background merah saat hover */
+}
+
+/* Gallery Styles */
+.gallery {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Grid Container for Gallery */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+  gap: 15px; /* Space between grid items */
+  justify-items: center; /* Center images within grid items */
+}
+
+/* Grid Item Styling */
+.grid-item img {
+  width: 100%; /* Make images fill the grid item */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover Effect for Grid Images */
+.grid-item img:hover {
+  transform: scale(1.05); /* Zoom effect */
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+  }
+}
+
+/* Button Styles (same as the existing code) */
+button {
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #4caf50;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+  padding: 0;
+  margin-top: 20px;
+}
+
+.button_top {
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+button:hover .button_top {
+  transform: translateY(-0.33em);
+}
+
+button:active .button_top {
+  transform: translateY(0);
+}

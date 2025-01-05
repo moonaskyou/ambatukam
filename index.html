@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ambatukam</title>
+  
+  <!-- External CSS File -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Canvas for snow effect -->
+  <canvas id="snowCanvas"></canvas>
+
+  <header>
+    <div class="logo">ambatukam</div>
+    <nav class="nav-menu">
+      <!-- Theme Dropdown -->
+      <div class="dropdown">
+        <a href="#" id="theme">theme</a>
+        <div class="dropdown-content">
+          <a href="#" id="dark">dark</a>
+          <a href="#" id="light">light</a>
+        </div>
+      </div>
+
+      <!-- Tools Dropdown -->
+      <div class="dropdown">
+        <a href="#">tools</a>
+        <div class="dropdown-content">
+          <a href="#">mint</a>
+          <a href="#">rarity</a>
+          <a href="#">market</a>
+        </div>
+      </div>
+
+      <!-- Twitter Icon -->
+      <a href="https://x.com/moonaskyou" class="twitter-icon">
+        <img src="twitter.png" alt="Twitter Icon">
+      </a>
+
+      <!-- Hamburger Menu -->
+      <a href="#" class="hamburger-menu" onclick="toggleMenu()">&#9776;</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content">
+      <div class="text">
+        <h1>Ambatukam bull unleashed</h1>
+        <p><span>One mighty charge </span> for <span>dreamkind.</span></p>
+        <button id="mintButton">
+          <span class="button_top">Mint</span>
+        </button>
+        <audio id="buttonSound" src="audio.mp3"></audio>
+      </div>
+      <div class="astronaut">
+        <img src="astronaut.png" alt="Pixel Astronaut">
+      </div>
+    </div>
+    
+    
+  </main>
+
+  <!-- Popup Modal -->
+  <div id="popup" class="popup">
+    <span id="closeBtn" class="close-btn">&times;</span>
+    <img src="ambatukam.jpg" alt="Popup Image" class="popup-image">
+  </div>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>

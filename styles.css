@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('custom-font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'CustomFont', Arial, sans-serif;
+    background: linear-gradient(to bottom, #0b0c10, #1f2833);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111;
+}
+
+/* Logo styling */
+header .logo {
+    font-size: 50px;
+    font-weight: 700;
+    color: #4caf50;
+    padding-left: 30px;
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
+}
+
+/* Dropdown links */
+header nav a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 30px;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #fff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1000;  /* Pastikan ini lebih besar dari konten lain */
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #bbb;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Twitter Icon */
+.twitter-icon {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.twitter-icon img {
+    vertical-align: middle;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    width: 30px;
+    height: 30px;
+}
+
+.twitter-icon:hover img {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+/* Main Content */
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0;
+}
+
+.text {
+    max-width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.astronaut {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.astronaut img {
+    width:100%;
+    max-width: 100%;
+    height: auto;
+}
+
+main h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+main p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+main p span {
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main h1 {
+        font-size: 2em;
+    }
+
+    main p {
+        font-size: 1em;
+    }
+
+    .astronaut img {
+        width: 150px;
+    }
+
+    .content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .text, .astronaut {
+        max-width: 100%;
+    }
+}
